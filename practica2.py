@@ -1,4 +1,4 @@
-import numpy as np
+
     
 def getMin( a, b ):
     if ( a < b ): return a
@@ -11,19 +11,19 @@ def getMaxArray( a ):
     
     return max
 
-R = np.array([
+R = [
 [0.2, 0.6, 1, 0.8],
 [0.4, 0.7, 0.9, 0.8],
 [0.5, 0.6, 0.9, 0.4],
 [1, 0.8, 0.7, 0.5]
-])
+]
 
-S = np.array([
+S = [
 [0.7, 1, 0.7, 0.5, 0.3],
 [0.4, 0.6, 1, 0.6, 0.6],
 [0.2, 0.4, 0.6, 1, 0.6],
 [0.1, 0.3, 0.5, 0.5, 1]
-])
+]
 
 Max_Min = [[],
      [],
@@ -40,7 +40,7 @@ for k in range(4):
         # Get the max out of the mins
         list = []
         for i in range(len(R[0])):
-            list.append( getMin( R[k,i], S[i,j]) )
+            list.append( getMin( R[k][i], S[i][j]) )
 
         # Store in Max_Min the max out of the mins
         Max_Min[k].append(getMaxArray(list))
@@ -67,7 +67,7 @@ for k in range(len(S)):
         # Get the max out of the products
         list = []
         for i in range(len(R[0])):
-            list.append( round(R[k,i] * S[i,j], 2) )
+            list.append( round(R[k][i] * S[i][j], 2) )
 
         # Store in Max_Prod the max out of the products
         Max_Prod[k].append(getMaxArray(list))
